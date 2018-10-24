@@ -1,0 +1,79 @@
+﻿ <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>Danh mục sản phẩm</h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="home"><i class="fa fa-dashboard"></i>Quản trị</a></li>        
+        <li class="active">Danh mục sản phẩm</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div class="row">
+                        <div class="box-title col-md-8 pull-left">                           
+                                <button type="button" class="btn btn-success" ui-sref="add_product_categories"><i class="fa fa-plus"></i> Thêm mới</button>
+                                <button type="button" class="btn btn-danger" id="btnDelete" ng-click="deleteMulti()"><i class="fa fa-trash"></i> Xóa chọn</button>                           
+                        </div>
+                        <div class="box-tools col-md-4 pull-right">
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Nhập từ khóa tìm kiếm" ng-model="keyword">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary" ng-click="search()"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th><input type="checkbox" name="all" ng-click="selectAll()"/></th>
+                            <th>ID</th>
+                            <th>Tên danh mục</th>
+                            <th>Ảnh</th>
+                            <th>Thứ tự</th>
+                            <th>Ngày tạo</th>
+                            <th>Người tạo</th>
+                            <th>Status</th>    
+                            <th class="text-right">Thao tác</th>                       
+                        </tr>
+                        <tr ng-repeat="item in productCategories">
+                            <td><input type="checkbox" name="all"  ng-model="item.checked"/></td>
+                            <td>{{item.ID}}</td>
+                            <td>{{item.Name}}</td>
+                            <th><img ng-src="{{item.Image}}" width="30" /></th>
+                            <td>{{item.DisplayOrder}}</td>
+                            <td>{{item.CreatedDate | date :'dd/MM/yyyy HH:mm:ss'}}</td>
+                            <td>{{item.CreatedBy}}</td>
+                            <td ng-switch="item.Status">
+                                <div ng-switch-when="true">
+                                    <span class="badge bg-green"><i class="fa fa-check"></i></span>
+                                </div>
+                                <div ng-switch-when="false">
+                                    <span class="badge bg-red"><i class="fa fa-times"></i></span>
+                                </div>
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-sm btn-primary" ui-sref="edit_product_categories({id:item.ID})"><i class="fa fa-pencil"></i> Sửa</button> 
+                                <button class="btn btn-sm btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash-o"></i> Xóa</button> 
+                            </td>
+                        </tr>
+                       
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategory(page)"></pager-directive>                                    
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->
