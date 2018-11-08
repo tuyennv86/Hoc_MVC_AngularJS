@@ -193,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
@@ -249,7 +250,10 @@
     <Content Include="app\shared\directives\selectNgFileDirective.js" />
     <Content Include="app\shared\modules\tedushop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\authData.js" />
+    <Content Include="app\shared\services\authenticationService.js" />
     <Content Include="app\shared\services\commonService.js" />
+    <Content Include="app\shared\services\loginService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
@@ -320,6 +324,12 @@
     <Content Include="Assets\admin\js\demo.js" />
     <Content Include="Assets\admin\js\pages\dashboard.js" />
     <Content Include="Assets\admin\js\pages\dashboard2.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.min.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.min.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\angular-local-storage.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\angular-local-storage.min.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\angular-ui-router.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\angular-ui-router.min.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\resolveService.js" />
@@ -6509,6 +6519,9 @@
     <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\admin\libs\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Assets\admin\libs\ckfinder\userfiles\.htaccess" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\admin\libs\angular-local-storage\angular-local-storage.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
