@@ -33,7 +33,7 @@
             }
 
             this.validateRequest = function () {
-                var url = 'api/home/TestMethod';
+                var url = '/api/home/TestMethod';
                 var deferred = $q.defer();
                 $http.get(url).then(function () {
                     deferred.resolve(null);
