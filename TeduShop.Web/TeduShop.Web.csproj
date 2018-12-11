@@ -6191,6 +6191,65 @@
     <Content Include="Assets\admin\libs\toastr\toastr.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
+    <Content Include="Assets\client\css\etalage.css" />
+    <Content Include="Assets\client\css\form.css" />
+    <Content Include="Assets\client\css\megamenu.css" />
+    <Content Include="Assets\client\css\style.css" />
+    <Content Include="Assets\client\images\arrow.png" />
+    <Content Include="Assets\client\images\arrow2.gif" />
+    <Content Include="Assets\client\images\arrows.png" />
+    <Content Include="Assets\client\images\as.png" />
+    <Content Include="Assets\client\images\b-arrow.png" />
+    <Content Include="Assets\client\images\banner1.jpg" />
+    <Content Include="Assets\client\images\banner2.jpg" />
+    <Content Include="Assets\client\images\border.png" />
+    <Content Include="Assets\client\images\b_star.png" />
+    <Content Include="Assets\client\images\down_arrow.png" />
+    <Content Include="Assets\client\images\f_icon.png" />
+    <Content Include="Assets\client\images\f_icon1.png" />
+    <Content Include="Assets\client\images\f_icon2.png" />
+    <Content Include="Assets\client\images\img-sprite.png" />
+    <Content Include="Assets\client\images\logo.png" />
+    <Content Include="Assets\client\images\nav_img.jpg" />
+    <Content Include="Assets\client\images\nav_img1.jpg" />
+    <Content Include="Assets\client\images\nav_img2.jpg" />
+    <Content Include="Assets\client\images\nz.png" />
+    <Content Include="Assets\client\images\pic.jpg" />
+    <Content Include="Assets\client\images\pic1.jpg" />
+    <Content Include="Assets\client\images\pic10.jpg" />
+    <Content Include="Assets\client\images\pic11.jpg" />
+    <Content Include="Assets\client\images\pic2.jpg" />
+    <Content Include="Assets\client\images\pic3.jpg" />
+    <Content Include="Assets\client\images\pic4.jpg" />
+    <Content Include="Assets\client\images\pic5.jpg" />
+    <Content Include="Assets\client\images\pic6.jpg" />
+    <Content Include="Assets\client\images\pic7.jpg" />
+    <Content Include="Assets\client\images\pic8.jpg" />
+    <Content Include="Assets\client\images\pic9.jpg" />
+    <Content Include="Assets\client\images\pk.png" />
+    <Content Include="Assets\client\images\plus.png" />
+    <Content Include="Assets\client\images\radius.png" />
+    <Content Include="Assets\client\images\srl.png" />
+    <Content Include="Assets\client\images\star.png" />
+    <Content Include="Assets\client\images\s_arrow.png" />
+    <Content Include="Assets\client\images\t1.jpg" />
+    <Content Include="Assets\client\images\t2.jpg" />
+    <Content Include="Assets\client\images\t3.jpg" />
+    <Content Include="Assets\client\images\t4.jpg" />
+    <Content Include="Assets\client\images\t5.jpg" />
+    <Content Include="Assets\client\images\t6.jpg" />
+    <Content Include="Assets\client\images\uk.png" />
+    <Content Include="Assets\client\images\us.png" />
+    <Content Include="Assets\client\images\wish.png" />
+    <Content Include="Assets\client\images\zoom.png" />
+    <Content Include="Assets\client\js\easing.js" />
+    <Content Include="Assets\client\js\jquery.etalage.min.js" />
+    <Content Include="Assets\client\js\jquery.flexisel.js" />
+    <Content Include="Assets\client\js\jquery.jscrollpane.min.js" />
+    <Content Include="Assets\client\js\jquery.min.js" />
+    <Content Include="Assets\client\js\jquery.wmuSlider.js" />
+    <Content Include="Assets\client\js\megamenu.js" />
+    <Content Include="Assets\client\js\move-top.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Libs\CKFinder.dll" />
@@ -6209,12 +6268,10 @@
     <Folder Include="app\shared\foouter\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\admin\libs\angular12\i18n\ngLocale\" />
-    <Folder Include="Assets\client\" />
     <Folder Include="UploadFiles\files\" />
     <Folder Include="UploadFiles\Flash\" />
     <Folder Include="UploadFiles\Images\" />
     <Folder Include="UploadFiles\_thumbs\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -6534,6 +6591,40 @@
     <Content Include="Assets\admin\libs\angular\bower.json" />
     <Content Include="Assets\admin\libs\angular\package.json" />
     <Content Include="Assets\admin\libs\angular\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnectionStrings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layouts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\images\arrows.psd" />
+    <Content Include="Assets\client\images\fb.psd" />
+    <Content Include="Assets\client\images\g+.psd" />
+    <Content Include="Assets\client\images\img-sprite.psd" />
+    <Content Include="Assets\client\images\logo.psd" />
+    <Content Include="Assets\client\images\radius.psd" />
+    <Content Include="Assets\client\images\social.psd" />
+    <Content Include="Assets\client\images\star.psd" />
+    <Content Include="Assets\client\images\s_arrow.psd" />
+    <Content Include="Assets\client\images\Thumbs.db" />
+    <Content Include="Assets\client\images\tw.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Fouter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_headerTop.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_HeaderBottom.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
