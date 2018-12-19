@@ -93,5 +93,15 @@ namespace TeduShop.Web.Infrastructure.Extensions
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
         }
+
+        public static void UpdateSlide(this Slide slide, SlideViewModel slideVm)
+        {
+            slide.ID = slideVm.ID;
+            slide.Image = slideVm.Image;
+            slide.Status = slideVm.Status;
+            slide.Url = slideVm.Url;
+            slide.DisplayOrder = slideVm.DisplayOrder;
+            slide.Description = slideVm.Description;
+        }
     }
 }

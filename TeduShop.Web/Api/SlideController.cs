@@ -14,85 +14,81 @@ using TeduShop.Web.Models;
 
 namespace TeduShop.Web.Api
 {
-    [RoutePrefix("api/product")]
+    [RoutePrefix("api/slide")]
     [Authorize]
-    public class ProductController : ApiControllerBase
+    public class SlideController : ApiControllerBase
     {
-        IProductService _productService;
-        public ProductController(IErrorService errorService, IProductService productService) : base(errorService)
+        ISlideService _slideService;
+        public SlideController(IErrorService errorService, ISlideService slideService) : base(errorService)
         {
-            this._productService = productService;
+            this._slideService = slideService;
         }
 
         [Route("getbyid/{id:int}")]
         [HttpGet]
-        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        public HttpResponseMessage GetByID(HttpRequestMessage request, int Id)
         {
             return CreateHttpResponse(request, () => {
-                var product = _productService.GetById(id);
-                var productVm = Mapper.Map<ProductViewModel>(product);
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, productVm);
-                return response;
-            });
-        }
-        [Route("getall")]
-        [HttpGet]
-        public HttpResponseMessage Getall(HttpRequestMessage request)
-        {
-            return CreateHttpResponse(request, () =>
-            {              
-                var listproduct = _productService.GetAll();                            
-                var responseData = Mapper.Map<List<ProductViewModel>>(listproduct);
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                var slides = _slideService.GetById(Id);
+                var slideVm = Mapper.Map<SlideViewModel>(slides);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, slideVm);
                 return response;
             });
         }
 
-        [Route("getpage")]
+        [Route("getall")]
         [HttpGet]
-        public HttpResponseMessage GetPage(HttpRequestMessage request, string keyword, int page, int pageSize)
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
-            return CreateHttpResponse(request, () =>
-            {
+            return CreateHttpResponse(request, () => {
+                var listsilde = _slideService.GetAll();
+                var listslideVm = Mapper.Map<List<SlideViewModel>>(listsilde);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listslideVm);
+                return response;
+            });
+        }
+
+        [Route("getpageing")]
+        [HttpGet]
+        public HttpResponseMessage GetPageing(HttpRequestMessage request, int page, int pagesize)
+        {
+            return CreateHttpResponse(request, () => {
                 int totalRow = 0;
-                var listproduct = _productService.GetAll(keyword);
-                totalRow = listproduct.Count();
-                var query = listproduct.OrderByDescending(x => x.CreatedBy).Skip(page * pageSize).Take(pageSize);
-                var responseData = Mapper.Map<List<ProductViewModel>>(query);
-                var paginationSet = new PaginationSet<ProductViewModel>()
+                var listsilde = _slideService.GetAllPaging(page, pagesize, out totalRow);
+                var responseData = Mapper.Map<List<SlideViewModel>>(listsilde);
+                var paginationSet = new PaginationSet<SlideViewModel>()
                 {
                     Items = responseData,
                     Page = page,
                     TotalCount = totalRow,
-                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
-                };
-
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pagesize)
+                };               
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });
         }
 
-        [Route("addproduct")]
+        [Route("addslide")]
         [HttpPost]
         [AllowAnonymous]
-        public HttpResponseMessage Post(HttpRequestMessage request, ProductViewModel productVm)
-        {            
+        public HttpResponseMessage Post(HttpRequestMessage request, SlideViewModel slideVm)
+        {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if(!ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
-                    Product product = new Product();
-                    product.UpdateProduct(productVm);
-                    var resul = _productService.Add(product);
-                    _productService.SaveChanges();
+                    Slide slide = new Slide();
+                    slide.UpdateSlide(slideVm);
+                    var resul = _slideService.Add(slide);
+                    _slideService.SaveChanges();
                     response = request.CreateResponse(HttpStatusCode.OK, resul);
                 }
-                
+
                 return response;
             });
         }
@@ -100,7 +96,7 @@ namespace TeduShop.Web.Api
         [Route("update")]
         [HttpPut]
         [AllowAnonymous]
-        public HttpResponseMessage Put(HttpRequestMessage request, ProductViewModel productVm)
+        public HttpResponseMessage Put(HttpRequestMessage request, SlideViewModel slideVm)
         {
             return CreateHttpResponse(request, () => {
                 HttpResponseMessage response = null;
@@ -110,10 +106,10 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    Product product = new Product();                    
-                    product.UpdateProduct(productVm);
-                    _productService.Update(product);
-                    _productService.SaveChanges();
+                    Slide slide = new Slide();
+                    slide.UpdateSlide(slideVm);
+                    _slideService.Update(slide);
+                    _slideService.SaveChanges();
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
                 return response;
@@ -127,14 +123,14 @@ namespace TeduShop.Web.Api
         {
             return CreateHttpResponse(request, () => {
                 HttpResponseMessage response = null;
-                if(!ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
-                    _productService.Delete(id);
-                    _productService.SaveChanges();
+                    _slideService.Delete(id);
+                    _slideService.SaveChanges();
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
                 return response;
@@ -157,9 +153,9 @@ namespace TeduShop.Web.Api
                     var ids = new JavaScriptSerializer().Deserialize<List<int>>(listId);
                     foreach (int Id in ids)
                     {
-                        _productService.Delete(Id);
+                        _slideService.Delete(Id);
                     }
-                    _productService.SaveChanges();
+                    _slideService.SaveChanges();
                     response = request.CreateResponse(HttpStatusCode.OK, ids.Count);
                 }
                 return response;

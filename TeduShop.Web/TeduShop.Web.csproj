@@ -197,6 +197,7 @@
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
+    <Compile Include="Api\SlideController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Models\ProductCategoryViewModel.cs" />
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\SlideViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -244,6 +246,13 @@
     <Content Include="app\components\pruduct_categories\productCategoryListView.html" />
     <Content Include="app\components\pruduct_categories\productCategorys.module.js" />
     <Content Include="app\components\pruduct_categories\productCategoryListController.js" />
+    <Content Include="app\components\slides\slideAddController.js" />
+    <Content Include="app\components\slides\slideAddView.html" />
+    <Content Include="app\components\slides\slideEditController.js" />
+    <Content Include="app\components\slides\slideEditView.html" />
+    <Content Include="app\components\slides\slideListController.js" />
+    <Content Include="app\components\slides\slideListView.html" />
+    <Content Include="app\components\slides\slides.module.js" />
     <Content Include="app\shared\directives\fileModelDirective.js" />
     <Content Include="app\shared\directives\pagerDirective.html" />
     <Content Include="app\shared\directives\pagerDirective.js" />

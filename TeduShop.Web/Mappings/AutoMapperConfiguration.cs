@@ -7,10 +7,7 @@ namespace TeduShop.Web.Mappings
     public class AutoMapperConfiguration
     {
         public static void Configure()
-        {
-            //Mapper.CreateMap<Post, PostViewModel>();
-            //Mapper.CreateMap<PostCategory, PostCategoryViewModel>();
-            //Mapper.CreateMap<Tag, TagViewModel>();
+        {            
             Mapper.Initialize(cfg => {
                 cfg.CreateMap<Post, PostViewModel>();
                 cfg.CreateMap<PostCategory, PostCategoryViewModel>();
@@ -19,6 +16,7 @@ namespace TeduShop.Web.Mappings
                 cfg.CreateMap<Product, ProductViewModel>();
                 cfg.CreateMap<ProductCategory, ProductCategoryViewModel>();
                 cfg.CreateMap<ProductTag, ProductTagViewModel>();
+                cfg.CreateMap<Slide, SlideViewModel>();
             });
         }
     }
