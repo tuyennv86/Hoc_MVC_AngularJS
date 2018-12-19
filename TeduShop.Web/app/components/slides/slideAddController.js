@@ -24,7 +24,7 @@
         function AddSlide() {                                   
             apiService.post('/api/slide/addslide', $scope.slide, function (result) {
                 notificationService.displaySuccess(result.data.Name + 'Thêm mới thành công !');
-                $state.go('products');
+                $state.go('slides');
             }, function (error) {
                 notificationService.displayError('Lỗi thêm mới không thành công');
                 console.log('Không thểm thêm mới lỗi :' + error);
@@ -43,4 +43,4 @@
         }       
 
     }
-})(angular.module('tedushop.products'));
+})(angular.module('tedushop.slides'));

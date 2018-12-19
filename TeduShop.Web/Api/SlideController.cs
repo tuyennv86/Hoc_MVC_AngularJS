@@ -15,7 +15,7 @@ using TeduShop.Web.Models;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/slide")]
-    [Authorize]
+    //[Authorize]
     public class SlideController : ApiControllerBase
     {
         ISlideService _slideService;

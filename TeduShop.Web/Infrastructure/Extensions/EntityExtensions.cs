@@ -97,6 +97,7 @@ namespace TeduShop.Web.Infrastructure.Extensions
         public static void UpdateSlide(this Slide slide, SlideViewModel slideVm)
         {
             slide.ID = slideVm.ID;
+            slide.Name = slideVm.Name;
             slide.Image = slideVm.Image;
             slide.Status = slideVm.Status;
             slide.Url = slideVm.Url;

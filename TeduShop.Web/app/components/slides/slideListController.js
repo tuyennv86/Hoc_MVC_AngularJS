@@ -80,17 +80,15 @@
         }
 
         function getSlide(page) {
-            page = page || 0;
-            keyword = $scope.keyword;
+            page = page || 0;           
             var config = {
-                params: {
-                    keyword: keyword,
+                params: {                  
                     page: page,
                     pageSize: 5
                 }
             }
-            apiService.get('/api/slide/getpage', config, function (result) {
-                $scope.getSlide = result.data.Items;
+            apiService.get('/api/slide/getpageing', config, function (result) {
+                $scope.slides = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPages;
                 $scope.totalCount = result.data.TotalCount;

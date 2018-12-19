@@ -60,7 +60,7 @@ namespace TeduShop.Service
         }        
         public IEnumerable<Slide> GetAllPaging(int page, int pageSize, out int totalRow)
         {
-            return _slideRepository.GetMultiPaging(x => x.Status == true, out totalRow, page, pageSize, new string[] {"Slide"});
+            return _slideRepository.GetMultiPaging(x => x.Status , out totalRow, page, pageSize, new string[] {"Slide"});
         }
 
         public Slide GetById(int id)
