@@ -13,9 +13,11 @@ namespace TeduShop.Web.Controllers
     public class HomeController : Controller
     {
         IProductCategoryService _productCategoryService;
-        public HomeController (IProductCategoryService productCategoryService)
+        ISlideService _slideService;
+        public HomeController (IProductCategoryService productCategoryService, ISlideService slideService)
         {
             this._productCategoryService = productCategoryService;
+            this._slideService = slideService;
         }
 
         public ActionResult Index()
@@ -36,10 +38,11 @@ namespace TeduShop.Web.Controllers
 
             return View();
         }
+
         [ChildActionOnly]
         public PartialViewResult HeaderTop()
         {           
-            return PartialView("_headerTop");
+            return PartialView("PartialView/_headerTop");
         }
 
         [ChildActionOnly]
@@ -47,7 +50,16 @@ namespace TeduShop.Web.Controllers
         {
             var model = _productCategoryService.GetAll();
             var listProductCategory = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-            return PartialView("_HeaderBottom", listProductCategory);
+            return PartialView("PartialView/_HeaderBottom", listProductCategory);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult SlideTop()
+        {
+            var model = _slideService.GetAll();            
+            var listSlide = Mapper.Map<IEnumerable<Slide>, IEnumerable<SlideViewModel>>(model);
+            return PartialView("PartialView/_slidePartialView", listSlide);
+            
         }
     }
 }

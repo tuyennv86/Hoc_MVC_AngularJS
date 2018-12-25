@@ -80,9 +80,11 @@
         }
 
         function getSlide(page) {
-            page = page || 0;           
+            page = page || 0;
+            keyword = $scope.keyword;
             var config = {
-                params: {                  
+                params: {
+                    keyword: keyword,
                     page: page,
                     pageSize: 5
                 }

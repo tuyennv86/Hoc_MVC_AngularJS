@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TeduShop.Web.Models.SlideViewModel>
+
+<div class="index-banner">
+    <div class="wmuSlider example1" style="height: 560px;">
+        <div class="wmuSliderWrapper">
+            @{ int i = 1;
+                foreach (var item in Model)
+                {
+                    if (i == 1)
+                    {
+                        <article style="position: relative; width: 100%; opacity: 1;">
+                            <div class="banner-wrap">
+                                <div class="slider-left">
+                                    <img src="@item.Image" alt="@item.Name" />
+                                </div>
+                                <div class="slider-right">                                   
+                                    <h2>@item.Name</h2>
+                                    <p>@item.Description</p>
+                                    <div class="btn"><a href="@item.Url">Chi tiết</a></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </article>
+                    }
+                    else
+                    {
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="slider-left">
+                                    <img src="@item.Image" alt="@item.Name" />
+                                </div>
+                                <div class="slider-right">                                    
+                                    <h2>@item.Name</h2>
+                                    <p>@item.Description</p>
+                                    <div class="btn"><a href="@item.Url">Chi tiết</a></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </article>
+                    }
+                    i++;
+                }
+            } 
+        </div>
+        <a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a>
+        <ul class="wmuSliderPagination">
+            @for(int j = 0; j< Model.Count(); j++) { 
+                <li><a href="#" class="">@j</a></li>
+            }
+               
+        </ul>
+        <a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a>
+        <ul class="wmuSliderPagination">
+            @for (int j = 0; j < Model.Count(); j++)
+            {
+                <li><a href="#" class="">@j</a></li>
+            }
+        </ul>
+    </div>
+    <script src="/Assets/client/js/jquery.wmuSlider.js"></script>
+    <script type="text/javascript" src="/Assets/client/js/modernizr.custom.min.js"></script>
+    <script>
+         $('.example1').wmuSlider();
+    </script>
+</div>

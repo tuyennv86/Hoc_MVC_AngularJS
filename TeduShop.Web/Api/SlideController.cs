@@ -15,7 +15,7 @@ using TeduShop.Web.Models;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/slide")]
-    //[Authorize]
+    [Authorize]
     public class SlideController : ApiControllerBase
     {
         ISlideService _slideService;
@@ -50,19 +50,22 @@ namespace TeduShop.Web.Api
 
         [Route("getpageing")]
         [HttpGet]
-        public HttpResponseMessage GetPageing(HttpRequestMessage request, int page, int pagesize)
+        public HttpResponseMessage GetPageing(HttpRequestMessage request, string keyword, int page, int pageSize)
         {
-            return CreateHttpResponse(request, () => {
+            return CreateHttpResponse(request, () => {                
                 int totalRow = 0;
-                var listsilde = _slideService.GetAllPaging(page, pagesize, out totalRow);
-                var responseData = Mapper.Map<List<SlideViewModel>>(listsilde);
+                var listslide = _slideService.GetAll(keyword);
+                totalRow = listslide.Count();
+                var query = listslide.OrderByDescending(x => x.ID).Skip(page * pageSize).Take(pageSize);
+                var responseData = Mapper.Map<List<SlideViewModel>>(query);
                 var paginationSet = new PaginationSet<SlideViewModel>()
                 {
                     Items = responseData,
                     Page = page,
                     TotalCount = totalRow,
-                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pagesize)
-                };               
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });

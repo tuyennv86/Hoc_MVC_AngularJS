@@ -6262,6 +6262,73 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Libs\CKFinder.dll" />
+    <Content Include="Libs\web\checkout.html" />
+    <Content Include="Libs\web\css\etalage.css" />
+    <Content Include="Libs\web\css\form.css" />
+    <Content Include="Libs\web\css\megamenu.css" />
+    <Content Include="Libs\web\css\style.css" />
+    <Content Include="Libs\web\images\arrow.png" />
+    <Content Include="Libs\web\images\arrow2.gif" />
+    <Content Include="Libs\web\images\arrows.png" />
+    <Content Include="Libs\web\images\as.png" />
+    <Content Include="Libs\web\images\b-arrow.png" />
+    <Content Include="Libs\web\images\banner1.jpg" />
+    <Content Include="Libs\web\images\banner2.jpg" />
+    <Content Include="Libs\web\images\border.png" />
+    <Content Include="Libs\web\images\b_star.png" />
+    <Content Include="Libs\web\images\down_arrow.png" />
+    <Content Include="Libs\web\images\f_icon.png" />
+    <Content Include="Libs\web\images\f_icon1.png" />
+    <Content Include="Libs\web\images\f_icon2.png" />
+    <Content Include="Libs\web\images\img-sprite.png" />
+    <Content Include="Libs\web\images\logo.png" />
+    <Content Include="Libs\web\images\nav_img.jpg" />
+    <Content Include="Libs\web\images\nav_img1.jpg" />
+    <Content Include="Libs\web\images\nav_img2.jpg" />
+    <Content Include="Libs\web\images\nz.png" />
+    <Content Include="Libs\web\images\pic.jpg" />
+    <Content Include="Libs\web\images\pic1.jpg" />
+    <Content Include="Libs\web\images\pic10.jpg" />
+    <Content Include="Libs\web\images\pic11.jpg" />
+    <Content Include="Libs\web\images\pic2.jpg" />
+    <Content Include="Libs\web\images\pic3.jpg" />
+    <Content Include="Libs\web\images\pic4.jpg" />
+    <Content Include="Libs\web\images\pic5.jpg" />
+    <Content Include="Libs\web\images\pic6.jpg" />
+    <Content Include="Libs\web\images\pic7.jpg" />
+    <Content Include="Libs\web\images\pic8.jpg" />
+    <Content Include="Libs\web\images\pic9.jpg" />
+    <Content Include="Libs\web\images\pk.png" />
+    <Content Include="Libs\web\images\plus.png" />
+    <Content Include="Libs\web\images\radius.png" />
+    <Content Include="Libs\web\images\srl.png" />
+    <Content Include="Libs\web\images\star.png" />
+    <Content Include="Libs\web\images\s_arrow.png" />
+    <Content Include="Libs\web\images\t1.jpg" />
+    <Content Include="Libs\web\images\t2.jpg" />
+    <Content Include="Libs\web\images\t3.jpg" />
+    <Content Include="Libs\web\images\t4.jpg" />
+    <Content Include="Libs\web\images\t5.jpg" />
+    <Content Include="Libs\web\images\t6.jpg" />
+    <Content Include="Libs\web\images\uk.png" />
+    <Content Include="Libs\web\images\us.png" />
+    <Content Include="Libs\web\images\wish.png" />
+    <Content Include="Libs\web\images\zoom.png" />
+    <Content Include="Libs\web\index.html" />
+    <Content Include="Libs\web\js\easing.js" />
+    <Content Include="Libs\web\js\jquery.etalage.min.js" />
+    <Content Include="Libs\web\js\jquery.flexisel.js" />
+    <Content Include="Libs\web\js\jquery.jscrollpane.min.js" />
+    <Content Include="Libs\web\js\jquery.min.js" />
+    <Content Include="Libs\web\js\jquery.wmuSlider.js" />
+    <Content Include="Libs\web\js\megamenu.js" />
+    <Content Include="Libs\web\js\move-top.js" />
+    <Content Include="Libs\web\login.html" />
+    <Content Include="Libs\web\register.html" />
+    <Content Include="Libs\web\shop.html" />
+    <Content Include="Libs\web\single.html" />
+    <Content Include="UploadFiles\Images\Slide\banner1.jpg" />
+    <Content Include="UploadFiles\Images\Slide\banner2.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -6279,7 +6346,6 @@
     <Folder Include="Assets\admin\libs\angular12\i18n\ngLocale\" />
     <Folder Include="UploadFiles\files\" />
     <Folder Include="UploadFiles\Flash\" />
-    <Folder Include="UploadFiles\Images\" />
     <Folder Include="UploadFiles\_thumbs\" />
   </ItemGroup>
   <ItemGroup>
@@ -6627,13 +6693,28 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Fouter.cshtml" />
+    <Content Include="Views\Shared\PartialView\_Fouter.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_headerTop.cshtml" />
+    <Content Include="Views\Shared\PartialView\_headerTop.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_HeaderBottom.cshtml" />
+    <Content Include="Views\Shared\PartialView\_HeaderBottom.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PartialView\_slidePartialView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\web\images\arrows.psd" />
+    <Content Include="Libs\web\images\fb.psd" />
+    <Content Include="Libs\web\images\g+.psd" />
+    <Content Include="Libs\web\images\img-sprite.psd" />
+    <Content Include="Libs\web\images\logo.psd" />
+    <Content Include="Libs\web\images\radius.psd" />
+    <Content Include="Libs\web\images\social.psd" />
+    <Content Include="Libs\web\images\star.psd" />
+    <Content Include="Libs\web\images\s_arrow.psd" />
+    <Content Include="Libs\web\images\tw.psd" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
