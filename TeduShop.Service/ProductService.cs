@@ -16,7 +16,12 @@ namespace TeduShop.Service
         void Delete(int id);
 
         IEnumerable<Product> GetAll();
+
         IEnumerable<Product> GetAll(string keyword);
+
+        IEnumerable<Product> GetHome(bool HomeFlag);
+
+        IEnumerable<Product> GetHot(bool HotFlag);
 
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
 
@@ -145,6 +150,16 @@ namespace TeduShop.Service
                 }                
             }
             _unitOfWork.Commit();
+        }
+
+        public IEnumerable<Product> GetHome(bool HomeFlag)
+        {
+            return _productRepository.GetMulti(x => x.HomeFlag == HomeFlag && x.Status);
+        }
+
+        public IEnumerable<Product> GetHot(bool HotFlag)
+        {
+            return _productRepository.GetMulti(x => x.HotFlag == HotFlag && x.Status);
         }
     }
 }

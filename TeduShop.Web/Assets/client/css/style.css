@@ -354,9 +354,15 @@ p.m_2{
 	font-size:0.8125em;
 }
 .price{
+	color:#f60f0f;
+	font-size:1.2em;
+	font-weight:700;
+}
+.price_old{
 	color:#555;
 	font-size:1.2em;
 	font-weight:700;
+    text-decoration:line-through;
 }
 .rating {
           overflow: hidden;

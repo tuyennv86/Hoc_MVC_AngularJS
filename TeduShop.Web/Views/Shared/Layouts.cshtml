@@ -58,8 +58,7 @@
 <body>
     @{ Html.RenderAction("HeaderTop", "Home");}
     @{ Html.RenderAction("HeaderBottom","Home");}
-   @RenderBody()
-    
+    @RenderBody()    
     @{Html.RenderPartial("PartialView/_Fouter");}
     <script type="text/javascript">
 			$(document).ready(function() {

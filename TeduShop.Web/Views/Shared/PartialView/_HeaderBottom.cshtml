@@ -10,7 +10,7 @@
                     var childCategory = Model.Where(x => x.ParentID == item.ID);
                     if (childCategory.Count() > 0)
                     {
-                        <li><a class="color@(i)" href="@(item.Alias).html">@item.Name</a>
+                        <li><a class="color@(i)" href="/@(item.Alias).html">@item.Name</a>
                             <div class="megapanel">
                                 <div class="row">
                                     <div class="col1">
@@ -29,13 +29,11 @@
                     }
                     else
                     {
-                        <li><a class="color@(i)" href="@(item.Alias).html">@item.Name</a></li>
+                        <li><a class="color@(i)" href="/@(item.Alias).html">@item.Name</a></li>
                     }
-                    i = i + 1;
+                    i++;
                 }
             }
-
-
             </ul>
             <div class="clear"></div>
             </div>
