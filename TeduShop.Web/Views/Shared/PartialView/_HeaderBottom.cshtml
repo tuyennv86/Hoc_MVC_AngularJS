@@ -10,7 +10,7 @@
                     var childCategory = Model.Where(x => x.ParentID == item.ID);
                     if (childCategory.Count() > 0)
                     {
-                        <li><a class="color@(i)" href="/@(item.Alias).html">@item.Name</a>
+                        <li><a class="color@(i)" href="/@(item.Alias).pc-@(item.ID).html">@item.Name</a>
                             <div class="megapanel">
                                 <div class="row">
                                     <div class="col1">
@@ -18,7 +18,7 @@
                                             <ul>
                                                 @foreach (var chiditem in childCategory)
                                                 {
-                                                 <li><a href="@(chiditem.Alias).html">@chiditem.Name</a></li>
+                                                 <li><a href="@(chiditem.Alias).pc-@(item.ID).html">@chiditem.Name</a></li>
                                                 }
                                             </ul>
                                         </div>
@@ -29,7 +29,7 @@
                     }
                     else
                     {
-                        <li><a class="color@(i)" href="/@(item.Alias).html">@item.Name</a></li>
+                        <li><a class="color@(i)" href="/@(item.Alias).pc-@(item.ID).html">@item.Name</a></li>
                     }
                     i++;
                 }

@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using AutoMapper;
+using TeduShop.Common;
+using TeduShop.Model.Models;
+using TeduShop.Service;
+using TeduShop.Web.Infrastructure.Core;
+using TeduShop.Web.Models;
+using PagedList;
+
+namespace TeduShop.Web.Controllers
+{
+    public class ProductController : Controller
+    {
+        IProductService _productService;
+        IProductCategoryService _productCategoryService;
+        public ProductController(IProductService productService, IProductCategoryService productCategoryService)
+        {
+            this._productService = productService;
+            this._productCategoryService = productCategoryService;
+        }
+        // GET: Product
+        public ActionResult Category(int id, int? Page)
+        {
+
+            var category = _productCategoryService.GetById(id);
+            var categoryVm = Mapper.Map<ProductCategory, ProductCategoryViewModel>(category);
+            ViewBag.Title = categoryVm.Name;
+
+            int PageSize = Convert.ToInt32(ConfigHelper.GetByKey("PageSize"));
+            int total = 0;
+            int PageIndex = Page ?? 1;
+            var listProduct = _productService.GetListProductByCategoryPageing(id, PageIndex, PageSize, out total);
+            var listProductVm = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(listProduct);
+            var paginationSet = new PaginationSet<ProductViewModel>()
+            {
+                Items = listProductVm,
+                MaxPage = Convert.ToInt32(ConfigHelper.GetByKey("MaxPage")),
+                TotalCount = total,
+                TotalPages = (int)Math.Ceiling((double)total / PageSize)
+            };
+
+            return View(paginationSet);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            ViewBag.Title = "Chi tiết sản phẩm";
+            return View();
+        }
+    }
+}

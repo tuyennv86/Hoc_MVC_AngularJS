@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TeduShop.Common;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Repositories;
@@ -26,6 +27,8 @@ namespace TeduShop.Service
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
 
         IEnumerable<Product> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow);
+
+        IEnumerable<Product> GetListProductByCategoryPageing(int categoryId, int PageIndex, int pageSize, out int totalRow);
 
         Product GetById(int id);
 
@@ -160,6 +163,13 @@ namespace TeduShop.Service
         public IEnumerable<Product> GetHot(bool HotFlag)
         {
             return _productRepository.GetMulti(x => x.HotFlag == HotFlag && x.Status);
+        }
+
+        public IEnumerable<Product> GetListProductByCategoryPageing(int categoryId, int PageIndex, int pageSize, out int totalRow)
+        {
+            var listProduct = _productRepository.GetMulti(x => x.Status && x.CategoryID == categoryId);
+            totalRow = listProduct.Count();
+            return listProduct.Skip((PageIndex - 1) * pageSize).Take(pageSize);
         }
     }
 }

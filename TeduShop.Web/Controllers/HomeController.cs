@@ -24,6 +24,8 @@ namespace TeduShop.Web.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Title = "Hệ thống bán đồ thể thao";
+
             var productHome = _productService.GetHome(true);
             var productHomeVm = Mapper.Map<IEnumerable<Product>,IEnumerable<ProductViewModel>>(productHome);
 
@@ -37,19 +39,19 @@ namespace TeduShop.Web.Controllers
             return View(homeVm);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
         [ChildActionOnly]
         public PartialViewResult HeaderTop()
