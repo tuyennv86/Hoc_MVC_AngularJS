@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201810170928512_AddColumDisplayOrder.Designer.cs">
       <DependentUpon>201810170928512_AddColumDisplayOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901020404056_AddQuantoty.cs" />
+    <Compile Include="Migrations\201901020404056_AddQuantoty.Designer.cs">
+      <DependentUpon>201901020404056_AddQuantoty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810170928512_AddColumDisplayOrder.resx">
       <DependentUpon>201810170928512_AddColumDisplayOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901020404056_AddQuantoty.resx">
+      <DependentUpon>201901020404056_AddQuantoty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

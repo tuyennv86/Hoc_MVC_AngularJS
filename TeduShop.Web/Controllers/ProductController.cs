@@ -10,6 +10,7 @@ using TeduShop.Service;
 using TeduShop.Web.Infrastructure.Core;
 using TeduShop.Web.Models;
 using PagedList;
+using System.Web.Script.Serialization;
 
 namespace TeduShop.Web.Controllers
 {
@@ -48,8 +49,15 @@ namespace TeduShop.Web.Controllers
 
         public ActionResult Detail(int id)
         {
-            ViewBag.Title = "Chi tiết sản phẩm";
-            return View();
+            var product = _productService.GetById(id);
+            var productVm = Mapper.Map<Product, ProductViewModel>(product);
+            ViewBag.Title = productVm.Name;
+            var productRelate = _productService.GetRelate(id, 12);
+            var productRelateVm = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productRelate);
+            ViewBag.relatedProducts = productRelateVm;            
+            List<string> listImg = new JavaScriptSerializer().Deserialize<List<string>>(productVm.MoreImages);
+            ViewBag.moreImg = listImg;
+            return View(productVm);
         }
     }
 }

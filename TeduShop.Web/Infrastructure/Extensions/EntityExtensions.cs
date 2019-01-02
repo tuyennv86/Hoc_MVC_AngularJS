@@ -92,6 +92,7 @@ namespace TeduShop.Web.Infrastructure.Extensions
             product.MetaKeyword = productVm.MetaKeyword;
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
+            product.Quantity = productVm.Quantity;
         }
 
         public static void UpdateSlide(this Slide slide, SlideViewModel slideVm)

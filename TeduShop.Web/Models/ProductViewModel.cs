@@ -34,5 +34,6 @@ namespace TeduShop.Web.Models
         public string MetaKeyword { set; get; }
         public string MetaDescription { set; get; }
         public bool Status { set; get; }
+        public int Quantity { get; set; }
     }
 }

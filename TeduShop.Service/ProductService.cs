@@ -34,6 +34,8 @@ namespace TeduShop.Service
 
         IEnumerable<Product> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
 
+        IEnumerable<Product> GetRelate(int id, int sl);
+
         void SaveChanges();
     }
 
@@ -170,6 +172,12 @@ namespace TeduShop.Service
             var listProduct = _productRepository.GetMulti(x => x.Status && x.CategoryID == categoryId);
             totalRow = listProduct.Count();
             return listProduct.Skip((PageIndex - 1) * pageSize).Take(pageSize);
+        }
+
+        public IEnumerable<Product> GetRelate(int id, int sl)
+        {
+            var product = _productRepository.GetSingleById(id);
+            return _productRepository.GetMulti(x => x.ID != id && x.Status && x.CategoryID == product.CategoryID).OrderByDescending(x =>x.Description).Take(sl);
         }
     }
 }
