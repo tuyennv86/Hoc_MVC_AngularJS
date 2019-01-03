@@ -149,11 +149,6 @@
                                 <img class="etalage_source_image" src="@Model.Image" alt="@Model.Name" />
                             </a>
                         </li>
-
-                        <li>
-                            <img class="etalage_thumb_image" src="/Assets/client/images/t2.jpg" />
-                            <img class="etalage_source_image" src="/Assets/client/images/t2.jpg" />
-                        </li>
                         @{
                             var moreImg = ViewBag.moreImg;
                             foreach (var img in moreImg)
@@ -174,7 +169,14 @@
 
                     <div class="price_single">
                         <span class="reducedfrom">@Model.Price.ToString("N0")</span>                        
-                        <span class="actual">@Model.PromotionPrice.Value.ToString("N0")</span><a href="#">click for offer</a>
+                        <span class="actual">@Model.PromotionPrice.Value.ToString("N0")</span>
+                        @{
+                            var listTag = (IEnumerable<TeduShop.Web.Models.TagViewModel>)ViewBag.tag;
+                            foreach (var tag in listTag)
+                            {
+                                <a href="/Tags/@(tag.ID).html">@tag.Name</a>                                
+                            }
+                        }  
                     </div>
                     <ul class="options">
                         <h4 class="m_9">Select a Size</h4>

@@ -105,5 +105,12 @@ namespace TeduShop.Web.Infrastructure.Extensions
             slide.DisplayOrder = slideVm.DisplayOrder;
             slide.Description = slideVm.Description;
         }
+
+        public static void UpdateTag(this Tag tag, TagViewModel tagVm)
+        {
+            tag.ID = tagVm.ID;
+            tag.Name = tagVm.Name;
+            tag.Type = tagVm.Type;
+        }
     }
 }

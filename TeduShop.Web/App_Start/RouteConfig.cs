@@ -31,7 +31,6 @@ namespace TeduShop.Web
                defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
                namespaces: new string[] { "TeduShop.Web.Controllers" }//neu nhieu controler cung ten thi them namspace vao khong trung thi thoi
            );
-
             routes.MapRoute(
                 name: "Product Category",
                 url: "{alias}.pc-{id}.html",
@@ -43,6 +42,12 @@ namespace TeduShop.Web
                url: "{alias}.p-{id}.html",
                defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+              name: "Tags",
+              url: "Tags/{tag}.html",
+              defaults: new { controller = "Product", action = "ListProductTag", tag = UrlParameter.Optional }
+          );
 
             routes.MapRoute(
                 name: "Default",
