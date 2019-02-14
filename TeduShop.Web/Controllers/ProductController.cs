@@ -19,7 +19,7 @@ namespace TeduShop.Web.Controllers
         IProductService _productService;
         IProductCategoryService _productCategoryService;
         ITagService _tagService;
-        
+
         public ProductController(IProductService productService, IProductCategoryService productCategoryService, ITagService tagService)
         {
             this._productService = productService;
@@ -59,8 +59,8 @@ namespace TeduShop.Web.Controllers
 
             var productRelate = _productService.GetRelate(id, 12);
             var productRelateVm = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productRelate);
-            ViewBag.relatedProducts = productRelateVm;   
-                     
+            ViewBag.relatedProducts = productRelateVm;
+
             List<string> listImg = new JavaScriptSerializer().Deserialize<List<string>>(productVm.MoreImages);
             ViewBag.moreImg = listImg;
 
@@ -86,6 +86,15 @@ namespace TeduShop.Web.Controllers
                 TotalPages = (int)Math.Ceiling((double)total / PageSize)
             };
             return View(paginationSet);
+        }
+
+        public JsonResult GetListProductByName(string keyword)
+        {
+            var listProduct = _productService.GetListProductByName(keyword);
+            return Json(new
+            {
+                data = listProduct
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

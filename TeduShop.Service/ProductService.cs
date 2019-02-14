@@ -39,6 +39,7 @@ namespace TeduShop.Service
         void InCreateView(int id);
         IEnumerable<Product> GetListProductByTag(string tagId, int pageIndex, int pageSize, out int totalRow);
 
+        IEnumerable<string> GetListProductByName(string keyword);
         void SaveChanges();
     }
 
@@ -201,6 +202,11 @@ namespace TeduShop.Service
         public IEnumerable<Product> GetListProductByTag(string tagId, int pageIndex, int pageSize, out int totalRow)
         {
             return _productRepository.GetAllByTag(tagId, pageIndex, pageSize, out totalRow);
+        }
+
+        public IEnumerable<string> GetListProductByName(string keyword)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.Name.Contains(keyword)).Select(a => a.Name);
         }
     }
 }
