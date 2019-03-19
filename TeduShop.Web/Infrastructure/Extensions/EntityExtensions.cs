@@ -112,5 +112,20 @@ namespace TeduShop.Web.Infrastructure.Extensions
             tag.Name = tagVm.Name;
             tag.Type = tagVm.Type;
         }
+
+        public static void UpdateContacDetail(this ContacDetail contacDetail, ContacDetailViewModel contacDetailVm)
+        {
+            contacDetail.ID = contacDetailVm.ID;
+            contacDetail.Name = contacDetailVm.Name;
+            contacDetail.Phone = contacDetailVm.Phone;
+            contacDetail.Email = contacDetailVm.Email;
+            contacDetail.Website = contacDetailVm.Website;
+            contacDetail.Address = contacDetailVm.Address;
+            contacDetail.Order = contacDetailVm.Order;
+            contacDetail.LatMap = contacDetailVm.LatMap;
+            contacDetail.LngMap = contacDetailVm.LngMap;
+            contacDetail.Status = contacDetailVm.Status;
+            contacDetail.CreatedDate = contacDetailVm.CreatedDate;
+        }
     }
 }

@@ -88,8 +88,25 @@
     <Compile Include="Migrations\201901030744482_tagprodoruct.Designer.cs">
       <DependentUpon>201901030744482_tagprodoruct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902150748224_ContacDetails.cs" />
+    <Compile Include="Migrations\201902150748224_ContacDetails.Designer.cs">
+      <DependentUpon>201902150748224_ContacDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902150752023_AddColumCreateDateContacDetgail.cs" />
+    <Compile Include="Migrations\201902150752023_AddColumCreateDateContacDetgail.Designer.cs">
+      <DependentUpon>201902150752023_AddColumCreateDateContacDetgail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903070826439_updatecontact.cs" />
+    <Compile Include="Migrations\201903070826439_updatecontact.Designer.cs">
+      <DependentUpon>201903070826439_updatecontact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903070832388_updatecontact1.cs" />
+    <Compile Include="Migrations\201903070832388_updatecontact1.Designer.cs">
+      <DependentUpon>201903070832388_updatecontact1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContacDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuGroupRepository.cs" />
@@ -142,6 +159,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901030744482_tagprodoruct.resx">
       <DependentUpon>201901030744482_tagprodoruct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902150748224_ContacDetails.resx">
+      <DependentUpon>201902150748224_ContacDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902150752023_AddColumCreateDateContacDetgail.resx">
+      <DependentUpon>201902150752023_AddColumCreateDateContacDetgail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903070826439_updatecontact.resx">
+      <DependentUpon>201903070826439_updatecontact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903070832388_updatecontact1.resx">
+      <DependentUpon>201903070832388_updatecontact1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,7 +24,7 @@
             parent: 'base',
             templateUrl: '/app/components/home/homeView.html',
             controller: 'homeController'
-        });;
+        });
     }
 
     function configAuthentication($httpProvider) {

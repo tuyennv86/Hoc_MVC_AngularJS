@@ -18,6 +18,11 @@ namespace TeduShop.Web
                url: "dang-nhap.html",
                defaults: new { controller = "Acount", action = "Login", id = UrlParameter.Optional }
            );
+            routes.MapRoute(
+              name: "Contac",
+              url: "Lien-he.html",
+              defaults: new { controller = "Contac", action = "Index", id = UrlParameter.Optional }
+          );
 
             routes.MapRoute(
                name: "Register",

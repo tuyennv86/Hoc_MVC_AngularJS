@@ -1,0 +1,163 @@
+﻿@model TeduShop.Web.Models.ContacDetailViewModel
+
+@{
+    ViewBag.Title = "Thông tin liên hệ";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+<div class="register_account">
+    <div class="wrap">
+        <h4 class="title">Liên hệ</h4>
+        <form>
+            <div class="col_1_of_2 span_1_of_2">
+                <div><input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}"></div>
+                <div><input type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></div>
+                <div><input type="text" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
+                <div><input type="text" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
+            </div>
+            <div class="col_1_of_2 span_1_of_2">
+                <div>@Model.Name </div>
+                <div>Địa chỉ : @Model.Address </div>
+                <div>Điện thoại : @Model.Phone </div>
+                <div>Email: @Model.Email </div>
+                <div>Bản đồ đường đi</div>
+                
+                <div>
+                    <div id="map" style="width:100%;height:400px;"></div>
+                    <script>
+      function initMap() {
+        var myLatlng = {lat: @Model.LatMap, lng: @Model.LngMap};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 27,
+          center: myLatlng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Click to zoom'
+        });
+
+        map.addListener('center_changed', function() {
+          // 3 seconds after the center of the map has changed, pan back to the
+          // marker.
+          window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        });
+
+        marker.addListener('click', function() {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        });
+      }
+                    </script>
+                    <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk3Eeu6MXm1Y6qil2hO6j89kckY5nnSTo&callback=initMap">
+                    </script>
+
+
+                    
+                    
+                </div>
+
+                </div>
+            </div>
+            <button class="grey">Submit</button>
+            <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+            <div class="clear"></div>
+        </form>
+    </div>
+</div>
+@*<h2>Index</h2>
+
+<div>
+    <h4>ContacDetailViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LatMap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LatMap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LngMap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LngMap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+    </dl>
+</div>*@
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
