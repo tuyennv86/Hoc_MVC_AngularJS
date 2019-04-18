@@ -1204,16 +1204,16 @@ p#login-form-remember label a:hover{
 .register_account{
 	padding:3% 0;
 }
-.register_account form input[type="text"], .register_account form select {
-	font-size: 0.8125em;
-	color: #999;
-	padding: 8px;
-	outline: none;
-	margin: 10px 0;
-	width: 95%;
-	font-family: 'Open Sans', sans-serif;
-	border:1px solid #f0f0f0;
-}
+    .register_account form input[type="text"], .register_account form select, .register_account form input[type="password"] {
+        font-size: 0.8125em;
+        color: #999;
+        padding: 8px;
+        outline: none;
+        margin: 10px 0;
+        width: 95%;
+        font-family: 'Open Sans', sans-serif;
+        border: 1px solid #f0f0f0;
+    }
 .register_account form input[type="text"]:hover, .register_account form select:hover{
 	border:1px solid #DBDADA;
 }
@@ -3117,4 +3117,68 @@ p.cart a:hover {
 		font-size: 0.85em;
 		margin-bottom: 1%;
 	}
-}								
+}
+
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.category_block li:hover {
+    background-color: #007bff;
+}
+
+    .category_block li:hover a {
+        color: #ffffff;
+    }
+
+.category_block li a {
+    color: #343a40;
+}
+
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+
+    .product_rassurance .list-inline {
+        margin-bottom: 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+        .product_rassurance .list-inline li:hover {
+            color: #343a40;
+        }
+
+.reviews_product .fa-star {
+    color: gold;
+}
+
+.actions .btn-info {
+    float: left;
+}
+
+.actions .btn-danger {
+    float: right;
+}

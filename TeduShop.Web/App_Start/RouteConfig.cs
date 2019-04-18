@@ -29,6 +29,11 @@ namespace TeduShop.Web
                url: "dang-ky.html",
                defaults: new { controller = "Acount", action = "Register", id = UrlParameter.Optional }
            );
+            routes.MapRoute(
+               name: "ShoppongCart",
+               url: "gio-hang.html",
+               defaults: new { controller = "ShoppingCart", action = "Index", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                name: "About",
