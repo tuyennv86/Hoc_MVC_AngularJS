@@ -31,7 +31,8 @@ namespace TeduShop.Web.Controllers
             var cart = (List<ShoppingCartViewModel>)Session[CommonConstants.SessionCart];
             return Json(new
             {
-                data = cart
+                data = cart,
+                status = true
             }, JsonRequestBehavior.AllowGet);
         }
 
@@ -57,6 +58,7 @@ namespace TeduShop.Web.Controllers
                 var product = _productService.GetById(ProductId);
                 newItem.product = Mapper.Map<Product, ProductViewModel>(product);
                 newItem.Quantity = 1;
+                cart.Add(newItem);
             }
             Session[CommonConstants.SessionCart] = cart;
             return Json(new

@@ -10,6 +10,6 @@ namespace TeduShop.Web.Models
     {
         public int ProductId { get; set; }
         public ProductViewModel product { get; set; }
-        public int Quantity { get; set; }
+        public int Quantity { get; set; }        
     }
 }

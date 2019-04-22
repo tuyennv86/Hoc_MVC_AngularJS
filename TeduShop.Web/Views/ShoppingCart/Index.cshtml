@@ -30,57 +30,10 @@
                                 <th> </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>Product Name Dada</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">124,90 €</td>
-                                <td class="text-right actions">	<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>Product Name Toto</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">33,90 €</td>
-                                <td class="text-right actions">	<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>Product Name Titi</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">70,00 €</td>
-                                <td class="text-right actions">	<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>Sub-Total</td>
-                                <td class="text-right">255,90 €</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>Shipping</td>
-                                <td class="text-right">6,90 €</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><strong>Total</strong></td>
-                                <td class="text-right"><strong>346,90 €</strong></td>
-                            </tr>
+                        <tbody id="cartBody">
+                            
                         </tbody>
-                    </table>
+                    </table>                   
                 </div>
             </div>
             <div class="col mb-2">
@@ -97,3 +50,13 @@
     </div>
 </div>
 
+<script id="template" type="x-tmpl-mustache">
+    <tr>
+        <td><img src="{{ImgUrl}}" /> </td>
+        <td>{{ProductName}}</td>
+        <td>{{Price}}</td>
+        <td><input class="form-control" type="text" value="{{Quatity}}" data-id="{{ProductId}}" /></td>
+        <td class="text-right">{{SubPrice}}</td>
+        <td class="text-right actions">	<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+    </tr>
+</script>
