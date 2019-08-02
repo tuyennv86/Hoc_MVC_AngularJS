@@ -44,7 +44,7 @@
                             ImgUrl: item.product.Image,
                             Price: numeral(item.product.Price).format('0,0'),
                             Quatity: item.Quantity,
-                            SubPrice: numeral(item.Quantity * item.product.Price).format('0,0)
+                            SubPrice: numeral(item.Quantity * item.product.Price).format('0,0')
                         });
                     });
                     $("#cartBody").html(html);
